@@ -3,6 +3,7 @@ Linear Regression Preprocessing and Modeling
 
 <!-- badges: start -->
   [![R-CMD-check](https://github.com/yawang0725/Biostat625_hw3/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/yawang0725/Biostat625_hw3/actions/workflows/R-CMD-check.yaml)
+  [![codecov](https://codecov.io/github/yawang0725/Biostat625_hw3/graph/badge.svg?token=Y35ISSXNRR)](https://codecov.io/github/yawang0725/Biostat625_hw3)
   <!-- badges: end -->
 # Introduction
 

@@ -52,39 +52,11 @@ Using [hw3](https://www.npmjs.org/), just run the following command:
 
 # install the new package
 devtools::install_github("yawang0725/Biostat625_hw3")
-```
-
-    ## Using GitHub PAT from the git credential store.
-
-    ## Downloading GitHub repo yawang0725/Biostat625_hw3@HEAD
-
-    ## ── R CMD build ─────────────────────────────────────────────────────────────────
-    ##      checking for file ‘/private/var/folders/sm/fyc9dlf55jj62vtb6dynb6640000gn/T/RtmpR6he2v/remotes9335b237b1/yawang0725-Biostat625_hw3-c718599/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/sm/fyc9dlf55jj62vtb6dynb6640000gn/T/RtmpR6he2v/remotes9335b237b1/yawang0725-Biostat625_hw3-c718599/DESCRIPTION’
-    ##   ─  preparing ‘hw3’:
-    ##      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
-    ##   ─  checking for LF line-endings in source and make files and shell scripts
-    ##   ─  checking for empty or unneeded directories
-    ##    Omitted ‘LazyData’ from DESCRIPTION
-    ##   ─  building ‘hw3_0.1.0.tar.gz’
-    ##      
-    ## 
-
-``` r
 # build the vignette
 devtools::install_github('yawang0725/Biostat625_hw3', build_vignettes =T)
-```
-
-    ## Using GitHub PAT from the git credential store.
-
-    ## Skipping install of 'hw3' from a github remote, the SHA1 (c7185993) has not changed since last install.
-    ##   Use `force = TRUE` to force installation
-
-``` r
 # browse the vignette 
 browseVignettes(package = "hw3")
 ```
-
-    ## No vignettes found by browseVignettes(package = "hw3")
 
 ### Usage
 

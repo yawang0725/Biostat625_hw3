@@ -3,7 +3,7 @@ Type: Package
 Title: Linear Model Helper Functions for Data Analysis
 Version: 0.1.0
 Author: Ya Wang
-Maintainer: 1355113206@qq.com
+Maintainer: Ya Wang <1355113206@qq.com>
 Description: 
     Provides a set of functions to streamline linear regression analysis, including 
     data cleaning, model fitting, statistical inference, and performance evaluation.

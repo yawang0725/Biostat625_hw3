@@ -1,13 +1,9 @@
 Linear Regression Preprocessing and Modeling
 ================
 
-<<<<<<< HEAD
-=======
 <!-- badges: start -->
   [![R-CMD-check](https://github.com/yawang0725/Biostat625_hw3/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/yawang0725/Biostat625_hw3/actions/workflows/R-CMD-check.yaml)
   <!-- badges: end -->
-  
->>>>>>> c7df41a (Commit local changes before pulling)
 # Introduction
 
 This package offers researchers a straightforward and comprehensive

@@ -1,0 +1,69 @@
+---
+title: "ttl"
+output: html_document
+date: "2024-11-19"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Comparison(s) against the original R functions on simulated or real datasets to demonstrate both the correctness (e.g., via all.equal())
+
+```{r cars}
+# Clean the dataset
+cleaned_iris <- clean_data(iris, 
+                           method_missing = "omit", 
+                           method_outliers = "none", 
+                           scale_data = TRUE, 
+                           remove_constant = TRUE)
+
+# Fit the model using our custom function
+custom_fit <- fit_linear_model(dataset = cleaned_iris, 
+                               response_var = "Sepal.Length", 
+                               predictor_vars = c("Sepal.Width", "Petal.Length", "Petal.Width"))
+
+# Fit the model using lm()
+base_model <- lm(Sepal.Length ~ Sepal.Width + Petal.Length + Petal.Width, data = cleaned_iris)
+
+# Extract summary statistics from lm()
+base_summary <- summary(base_model)
+base_coef <- base_summary$coefficients
+
+# Extract statistics from custom implementation
+cat("Comparing coefficients:\n")
+custom_stats <- extract_stats(custom_fit)
+coef_match <- all.equal(as.vector(custom_fit$betahat), unname(coef(base_model)))
+print(coef_match)
+
+# Compare t-values and p-values
+cat("\nComparing t-values:\n")
+t_match <- all.equal(as.vector(custom_stats$t_statistic), unname(base_coef[, "t value"]))
+print(t_match)
+
+cat("\nComparing p-values:\n")
+p_match <- all.equal(as.vector(custom_stats$p_value), unname(base_coef[, "Pr(>|t|)"]))
+print(p_match)
+
+
+```
+
+Comparison(s) against the original R functions on simulated or real datasets to demonstrate both the efficiency (e.g., via bench::mark()) of the implemented functions.
+
+```{r pressure, echo=FALSE}
+library(bench)
+
+benchmark_result <- bench::mark(
+  lm_result = lm(Sepal.Length ~ Sepal.Width + Petal.Length + Petal.Width, data = cleaned_iris),
+  custom_result = fit_linear_model(
+    dataset = cleaned_iris, 
+    response_var = "Sepal.Length", 
+    predictor_vars = c("Sepal.Width", "Petal.Length", "Petal.Width")
+  ),
+  check = FALSE  
+)
+
+print(benchmark_result)
+```
+
+
